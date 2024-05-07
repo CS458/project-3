@@ -34,6 +34,41 @@ def test_success_credentials(input):
 
     return passed
 
+def test_google():
+    passed = False
+    driver = webdriver.Chrome()
+
+    driver.get("http://127.0.0.1:5000/")
+    time.sleep(3)
+
+
+    submit_button = driver.find_element("id", "submit-g")
+    submit_button.click()
+
+    time.sleep(3)
+
+    try:
+        submit_button = driver.find_element("css", "css=.wLBAL")
+        submit_button.click()
+    except:
+        pass
+
+    if "Signing in will redirect you to: http://127.0.0.1:5000" in driver.page_source:
+        passed = True
+
+
+
+    driver.implicitly_wait(10)
+    time.sleep(3)
+
+
+    if "http://localhost:3000" in driver.current_url:
+        passed = True
+
+    driver.quit()
+
+    return passed
+
 if __name__=="__main__":
     #4.1.1 Valid Credentials with Phone
     if test_success_credentials(("+905540244745", "1234$cdA6578")):
@@ -48,3 +83,10 @@ if __name__=="__main__":
 
     else:
         logger.error("4.2.3 FAILED")
+
+    #4.1.2 Valid Google Authentication:
+    if test_google():
+        logger.info("4.1.2 PASSED")
+
+    else:
+        logger.error("4.1.2 FAILED")
