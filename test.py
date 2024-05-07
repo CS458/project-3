@@ -84,6 +84,24 @@ def map_location_visible():
     return passed
 
 
+def sea_distance_visible():
+    passed = False
+    driver = webdriver.Chrome()
+
+    driver.get("http://localhost:3000/")
+    time.sleep(3)
+
+    try:
+        driver.find_element("id", "sea-distance")
+        passed = True
+    
+    except:
+        pass
+
+    time.sleep(3)
+
+    return passed
+
 def zoom_visible():
     passed = False
     driver = webdriver.Chrome()
@@ -175,3 +193,10 @@ if __name__=="__main__":
 
     else:
         logger.error("1.2 FAILED")
+
+    #1.3 Test if sea distance exists
+    if sea_distance_visible():
+        logger.info("1.3 PASSED")
+
+    else:
+        logger.error("1.3 FAILED")
