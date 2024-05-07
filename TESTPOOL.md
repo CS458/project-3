@@ -100,3 +100,10 @@ Status: "Failed"
 - Input: Click on button with id “earth-to-sun”
 - Expected Behavior: Current_url: "http://localhost:3000/earth-to-sun"
 
+---
+---
+## Sun Distance
+
+3.1 Test if distance to sun exists
+Input: -
+Expected Behavior: Element with id “sun-distance” is VISIBLE
