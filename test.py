@@ -104,3 +104,10 @@ if __name__=="__main__":
 
     else:
         logger.error("4.2.1 FAILED")
+
+    #4.2.2 Phone input does not match:
+    if not test_success_credentials(("5333333333", "1231234321")):
+        logger.info("4.2.2 PASSED")
+
+    else:
+        logger.error("4.2.2 FAILED")
