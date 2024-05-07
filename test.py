@@ -83,6 +83,21 @@ def map_location_visible():
 
     return passed
 
+
+def zoom_visible():
+    passed = False
+    driver = webdriver.Chrome()
+
+    driver.get("http://localhost:3000/")
+    time.sleep(3)
+
+    if "gm-control-active" in driver.page_source:
+        passed = True
+
+    time.sleep(3)
+
+    return passed
+
 if __name__=="__main__":
     #4.1.1 Valid Credentials with Phone
     if test_success_credentials(("+905540244745", "1234$cdA6578")):
@@ -153,3 +168,10 @@ if __name__=="__main__":
 
     else:
         logger.error("1.1 FAILED")
+
+    #1.2 Test if map zoom(+) button exist
+    if zoom_visible():
+        logger.info("1.2 PASSED")
+
+    else:
+        logger.error("1.2 FAILED")
