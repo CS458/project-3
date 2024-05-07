@@ -1,3 +1,5 @@
+We built this project using Testing Deriven Development. First a test pool is created then in each iteration one test is coded and then program is developed to maek that test pass. After each step, we have submitted updates as a commit to this repository.
+
 # project-3
 
 To run backend server:
