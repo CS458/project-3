@@ -125,3 +125,10 @@ if __name__=="__main__":
 
     else:
         logger.error("4.3.2 FAILED") 
+
+    #4.4.2 Phone input format is not valid:
+    if not test_success_credentials(("53a1234567", "12345678")):
+        logger.info("4.3.2 PASSED")
+
+    else:
+        logger.error("4.3.2 FAILED") 
