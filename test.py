@@ -97,3 +97,10 @@ if __name__=="__main__":
 
     else:
         logger.error("4.4.1 FAILED")
+
+    #4.2.1 Email input does not match:
+    if not test_success_credentials(("erengazi@gmail.com", "1231234321")):
+        logger.info("4.2.1 PASSED")
+
+    else:
+        logger.error("4.2.1 FAILED")
