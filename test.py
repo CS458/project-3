@@ -69,6 +69,20 @@ def test_google():
 
     return passed
 
+def map_location_visible():
+    passed = False
+    driver = webdriver.Chrome()
+
+    driver.get("http://localhost:3000/")
+    time.sleep(3)
+
+    if "area" in driver.page_source:
+        passed = True
+
+    time.sleep(3)
+
+    return passed
+
 if __name__=="__main__":
     #4.1.1 Valid Credentials with Phone
     if test_success_credentials(("+905540244745", "1234$cdA6578")):
@@ -132,3 +146,10 @@ if __name__=="__main__":
 
     else:
         logger.error("4.4.2 FAILED") 
+
+    #1.1 Map location is visible for valid user:
+    if map_location_visible():
+        logger.info("1.1 PASSED")
+
+    else:
+        logger.error("1.1 FAILED")
