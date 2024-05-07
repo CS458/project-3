@@ -75,5 +75,20 @@ Status: "Failed"
 - Output:
 Status: "Failed"
 
+---
+---
+## Map Page
 
+### 4.5. Google authentication invalid:
 
+1.1 Map location is visible for valid user:
+- Input: -
+- Expected Behavior: Location indicator icon is VISIBLE.
+
+1.2 Test if map zoom(+) button exist
+- Input: -
+- Expected Behavior: Zoom button is VISIBLE.
+
+1.3 Test if sea distance exists
+- Input: -
+- Expected Behavior: Element with id “sea-distance” is VISIBLE
