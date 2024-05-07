@@ -92,3 +92,11 @@ Status: "Failed"
 1.3 Test if sea distance exists
 - Input: -
 - Expected Behavior: Element with id “sea-distance” is VISIBLE
+
+---
+---
+## Navbar
+2.1 Test if navbar button changes route
+- Input: Click on button with id “earth-to-sun”
+- Expected Behavior: Current_url: "http://localhost:3000/earth-to-sun"
+

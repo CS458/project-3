@@ -116,6 +116,23 @@ def zoom_visible():
 
     return passed
 
+def navbar_works():
+    passed = False
+    driver = webdriver.Chrome()
+
+    driver.get("http://localhost:3000/")
+    time.sleep(3)
+
+    submit_button = driver.find_element("id", "earth-to-sun")
+    submit_button.click()
+    time.sleep(3)
+
+    if "http://localhost:3000/earth-to-sun" in driver.current_url:
+        passed = True
+
+    return passed
+
+
 if __name__=="__main__":
     #4.1.1 Valid Credentials with Phone
     if test_success_credentials(("+905540244745", "1234$cdA6578")):
@@ -200,3 +217,10 @@ if __name__=="__main__":
 
     else:
         logger.error("1.3 FAILED")
+
+    #2.1 Test if navbar button changes route
+    if navbar_works():
+        logger.info("2.1 PASSED")
+
+    else:
+        logger.error("2.1 FAILED")
