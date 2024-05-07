@@ -118,3 +118,10 @@ if __name__=="__main__":
 
     else:
         logger.error("4.3.1 FAILED")
+
+    #4.3.2 Password field is empty:
+    if not test_success_credentials(("sahandmoslemi@gmail.com", "")):
+        logger.info("4.3.2 PASSED")
+
+    else:
+        logger.error("4.3.2 FAILED") 
