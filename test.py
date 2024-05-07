@@ -132,6 +132,23 @@ def navbar_works():
 
     return passed
 
+def sun_distance_visible():
+    passed = False
+    driver = webdriver.Chrome()
+
+    driver.get("http://localhost:3000/earth-to-sun")
+    time.sleep(3)
+
+    try:
+        driver.find_element("id", "sun-distance")
+        passed = True
+    
+    except:
+        pass
+
+    time.sleep(3)
+
+    return passed
 
 if __name__=="__main__":
     #4.1.1 Valid Credentials with Phone
@@ -224,3 +241,10 @@ if __name__=="__main__":
 
     else:
         logger.error("2.1 FAILED")
+
+    #3.1 Test if distance to sun exists
+    if sun_distance_visible():
+        logger.info("3.1 PASSED")
+
+    else:
+        logger.error("3.1 FAILED")
