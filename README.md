@@ -5,7 +5,9 @@ We built this project using **Testing Deriven Development**. First a test pool i
 To run backend server:
 - Install python 3.10
 - `cd backend`
-- `pip install requirements.txt`
+- `pip install flask`
+- `pip install flask-oauthlib`
+- `pip install Werkzeug==2.2.2`
 - `python main.py`
 
 To run frontend server:
